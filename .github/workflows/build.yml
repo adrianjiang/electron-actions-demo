@@ -23,10 +23,12 @@ jobs:
         run: |
           yarn install
         env:
-          GH_TOKEN: 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
+          GH_TOKEN: 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
 
       - name: build
         run: |
           yarn build
         env:
-          GH_TOKEN: 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
+          GH_TOKEN: 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
+          # GH_TOKEN: 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
+          # GH_TOKEN: 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
