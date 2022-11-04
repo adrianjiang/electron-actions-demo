@@ -2,7 +2,7 @@
   "name": "electron-actions-demo",
   "productName": "Electron",
   "private": true,
-  "version": "2.1.0",
+  "version": "0.0.1",
   "description": "Vite React Electron boilerplate.",
   "author": "草鞋没号 <308487730@qq.com>",
   "license": "MIT",
