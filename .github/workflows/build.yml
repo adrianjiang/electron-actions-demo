@@ -1,28 +1,25 @@
-name: NodeJS with Electron
+name: Build/release
 
-on:
-  push:
-    branches: ["main"]
-  pull_request:
-    branches: ["main"]
+on: push
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
+  release:
+    runs-on: ${{ matrix.os }}
 
     strategy:
       matrix:
-        node-version: [16.x, 18.x]
+        os: [macos-latest, windows-latest]
 
     steps:
-      - uses: actions/checkout@v3
+      - name: Check out Git repository
+        uses: actions/checkout@v1
 
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
+      - name: Install Node.js, NPM and Yarn
+        uses: actions/setup-node@v1
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: 16.x
 
-      - name: Build
+      - name: Build/release Electron app
         run: |
-          npm install
-          npm run build
+          yarn install
+          yarn build
