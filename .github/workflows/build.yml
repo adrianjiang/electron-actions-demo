@@ -19,7 +19,14 @@ jobs:
         with:
           node-version: 16.x
 
-      - name: Build/release Electron app
+      - name: install
         run: |
           yarn install
+        env:
+          GH_TOKEN: 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
+
+      - name: build
+        run: |
           yarn build
+        env:
+          GH_TOKEN: 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
